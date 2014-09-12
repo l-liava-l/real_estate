@@ -1,0 +1,15 @@
+ion-view(title="Фильтры")
+
+    ion-nav-buttons(side="left")
+        button(menu-toggle="left" class="button button-icon icon ion-navicon")
+
+
+    ion-nav-buttons(side="right")
+        a(ui-sref="main.add_filter" class="button button-icon icon ion-plus")
+
+    ion-content
+        ion-list
+            ion-item(ng-repeat="(id, item) in items", item="item"  ng-click="selectFilter(id)") {{item.name}}
+                ion-option-button(class="ion-android-trash" ng-click="remove(id)")
+                ion-option-button(class="ion-android-mixer" ng-click="edit(item)")
+                span(class="badge badge-balanced") +28

@@ -1,0 +1,10 @@
+- var pageName = "Закладки"
+ion-view(title=pageName)
+    div(id="advertPage" name=pageName)
+        ion-nav-buttons(side="left")
+            button(menu-toggle="left" class="button button-icon icon ion-navicon")
+        ion-content(infinite-scroll delegate-handle="mainScroll" scroll="scroll.can")
+            div(class="advert-item" ng-react-component="AdvertList" data="visible")
+            div(class="box" style="min-height: 40px")
+
+

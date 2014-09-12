@@ -1,0 +1,19 @@
+div(class="modal")
+    ul(class="list item")
+      li(class="item item-text-wrap")
+        p После изменения фильтра загруженные обьявления будут удалены!
+
+        li(class="item")
+            div(class="row")
+                button( class="button button-positive col"
+                ng-click="cancel()")  Отмена
+                button( class="button  button-assertive col"
+                ng-click="agree()")  Подтвердить
+
+        li(class="item item-toggle")
+            label
+                label Больше не показывать подсказки
+                    label( style="float: left" class="toggle toggle-positive")
+                        input(type="checkbox" ng-checked="saveModal()" ng-model="ss.modal")
+                        div(class="track")
+                            div(class="handle")

@@ -1,0 +1,41 @@
+{% extends 'frontend_docs/base.html' %}
+
+{% block requirejs %}
+require('adverts');
+{% endblock requirejs %}
+
+{% block content %}
+<div class="container">
+  <div class="row botom_line">
+    <div class="col-lg-8">
+      <h2>Получить случайные объявления</h2>
+      <form id="js-random-adverts" role="form" data-url="{% url 'adverts:list_random_adverts' %}">
+{#        <div class="form-group">#}
+{#          <label>page</label>#}
+{#          <input name="page" type="text" class="form-control" placeholder="Номер страницы">#}
+{#        </div>#}
+        <button type="button" class="btn btn-primary js-get">GET</button>
+        <button type="button" class="btn btn-success js-post" disabled>POST</button>
+        <button type="button" class="btn btn-warning js-put" disabled>PUT</button>
+        <button type="button" class="btn btn-danger js-delete" disabled>DELETE</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row botom_line">
+    <div class="col-lg-8">
+      <h2>Получить объявления для заданного фильтра</h2>
+      <form id="js-adverts-by-filter" role="form" data-url="{% url 'filters:filter' %}">
+        <div class="form-group">
+          <label>filter_id</label>
+          <input name="filter_id" type="text" class="form-control" placeholder="id фильтра">
+        </div>
+        <button type="button" class="btn btn-primary js-get">GET</button>
+        <button type="button" class="btn btn-success js-post" disabled>POST</button>
+        <button type="button" class="btn btn-warning js-put" disabled>PUT</button>
+        <button type="button" class="btn btn-danger js-delete" disabled>DELETE</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

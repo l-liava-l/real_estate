@@ -1,0 +1,18 @@
+ion-view(title="Ценовой промежуток")
+    ion-content
+    div(class="item")
+        div(class="item range range-positive")
+            input(type="range" name="volume"  ng-model="editfilter.cost.min" min="0" max="100" value="33")
+
+        div(class="item range range-positive")
+            input(type="range" name="volume"  ng-model="editfilter.cost.max" min="{{editfilter.cost.min}}" max="1000" value="33")
+
+    div(class="item")
+
+        div(class="item item-input")
+
+            input(type="number" ng-model="editfilter.cost.min")
+            span
+                b -
+            input(type="number" ng-model="editfilter.cost.min")
+            span руб.

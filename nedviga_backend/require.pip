@@ -1,0 +1,9 @@
+Django>=1.6,<=1.6.99
+south==1.0
+django-mymigrate==0.2.0
+psycopg2==2.5.3
+django-bitfield==1.7.0
+grab==0.4.13
+lxml==3.3.5
+redis
+djorm-pgarray

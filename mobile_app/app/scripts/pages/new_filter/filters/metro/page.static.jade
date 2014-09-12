@@ -1,0 +1,33 @@
+ion-view(title="Метро рядом")
+    ion-content
+        div(class="item-input-inset")
+            label(class="item-input-wrapper")
+                i(class="icon ion-ios7-search placeholder-icon")
+                input(type="search" placeholder="Поиск по станциям" ng-model="search.str")
+
+            button(class="button button-clear" ng-click="search.start()") Найти
+
+        ion-list
+            div(ng-if="!query" ng-repeat="(name, lines) in metroStation")
+
+                ion-item(ng-click="selectLine(lines)") {{name}}
+                    span(class="badge" style="background-color: {{lines.color}}") &nbsp;&nbsp;&nbsp;&nbsp;
+                    ion-option-button(class="ion-android-add" ng-show="!lines.select" ng-click="addLine(lines)")
+                    ion-option-button(class="ion-android-close" ng-show="lines.select" ng-click="rmLine(lines)")
+
+                div( class="item" ng-show="lines.selected")
+                    ion-checkbox(    ng-repeat="station in lines['arr']"
+                                     ng-model="model[station]"
+                                     ng-checked="model[station]"
+                                     ng-change="oncheck(station)") {{station}}
+
+
+            div(ng-if="query" ng-repeat="(name, lines) in metroStation")
+                ion-checkbox(    ng-repeat="station in lines['arr'] | filter:query"
+                                 ng-model="model[station]"
+                                 ng-checked="model[station]"
+                                 ng-change="oncheck(station)")  {{station}}
+                    span(class="badge" style="background-color: {{lines.color}}") &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+        div(class="box" style="min-height: 40px")

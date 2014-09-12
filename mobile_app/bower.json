@@ -1,0 +1,25 @@
+{
+  "name": "angular-brunch-seed",
+  "repo": "scotch/angular-brunch-seed",
+  "version": "0.3.0",
+  "main": "_public/js/app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "ionic": "~1.0.0-beta.10",
+    "angular-resource": "",
+    "react": "~0.10.0"
+
+  },
+  "overrides": {
+    "ionic": {
+      "main": [
+        "release/css/ionic.css",
+        "release/js/ionic.bundle.js"
+      ]
+    }
+  }
+}

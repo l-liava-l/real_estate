@@ -1,0 +1,31 @@
+ion-view(title="Проверка номера телефона")
+    div(class="bar bar-header bar-positive")
+       h1(class="title") Проверка номера телефона
+
+    ion-content(class="header-margin")
+        div(ng-show="!pre")
+            div(class="card")
+                div(class="item item-text-wrap  font-small")  Nedviga отправит SMS на ваш телефон для проверки номера. Оплата согласно вашему тарифу
+
+            div(class="signup")
+                form(name="prelogin" class="item item-input-inset ng-invalid")
+                    span(class="prefix")
+                        b +7
+                    label(class="item-input-wrapper")
+                        input(type="number" name="phone"  ng-model="user.phone" placeholder="тел. номер" min="10" required)
+
+                    button(class="button button-small" type="submit"  ng-click="sendPhone(prelogin.phone.$valid)") Отправить СМС
+
+        div(ng-show="pre")
+            div(class="card")
+                div(class="item item-icon-right font-blue")
+                   span(class="prefix") +7 {{user.phone}}
+                   button(class="button icon ion-edit button-clear button-grey" style="margin-top: 3px" ng-click="editPhone()")
+
+                div(class="item item-text-wrap font-small") Введите четырехзначный ключ, полученный из СМС.
+
+            div(class="list signup")
+                form(name="verification" class="item item-input-inset")
+                    label(class="item-input-wrapper")
+                        input(type="text" name="key" ng-model="user.key" placeholder="ключ из СМС" maxlength="4" required)
+                    button(class="button button-small" type="submit"  ng-click="checkPhone(verification.key.$valid)") Подтвердить ключ

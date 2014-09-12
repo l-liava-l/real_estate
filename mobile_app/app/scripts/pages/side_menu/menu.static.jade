@@ -1,0 +1,14 @@
+ion-side-menus
+    ion-side-menu-content(drag-content="true")
+        ion-nav-bar(class="bar-positive nav-title-slide-ios7")
+            ion-nav-back-button(class="button-icon ion-arrow-left-c")
+        ion-nav-view(animation="slide-left-right-ios7" name="menuContent")
+
+    ion-side-menu(side="left")
+        header(class="bar bar-header bar-assertive")
+            div(class="title") Меню
+        ion-content(class="has-header")
+            ul(class="list")
+              a(class="item" nav-clear menu-close ui-sref="main.filters" ui-sref-active="current" ) Фильтры
+              a(class="item" nav-clear menu-close ui-sref="main.bookmarks" ui-sref-active="current") Закладки
+

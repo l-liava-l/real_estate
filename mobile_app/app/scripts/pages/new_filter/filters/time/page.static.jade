@@ -1,0 +1,11 @@
+ion-view(title="Срок")
+    ion-content
+        div(class="list")
+            div(class="item item-divider") Срок сдачи
+
+            ion-radio( ng-repeat="item in filter_term_list",
+                       ng-value="item.value"
+                       ng-model="editfilter.term.value"
+                       ng-change="changeTerm(item)")   {{ item.text }}
+
+

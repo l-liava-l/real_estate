@@ -1,0 +1,31 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'stylesheets/frontend_docs.css' %}" rel="stylesheet">
+    <script src="{% static 'javascripts/frontend_docs_vendor.js' %}"></script>
+    <script src="{% static 'javascripts/frontend_docs_code.js' %}"></script>
+    <script>
+      $(function() {
+        require('utils/jquery');
+        {% block requirejs %}{% endblock requirejs %}
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="js-nav" class="nav nav-pills">
+      <li class="">
+        <a href="{% url 'frontend_docs:auth' %}">Авторизация</a>
+      </li>
+      <li>
+        <a href="#">Пользовательские фильтры</a>
+      </li>
+      <li>
+        <a href="{% url 'frontend_docs:adverts' %}">Объявления</a>
+      </li>
+    </ul>
+    {% block content %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+ion-view(title="Новый фильтр")
+  ion-footer-bar(align-title="left" class="bar-light")
+    div(class="row")
+      button(class="button button-positive col col-50 col-offset-25" ng-click="save()" ui-sref="main.filters") Сохранить
+  ion-content
+    div(class="list")
+       label(class="item item-input item-stacked-label")
+         span(class="input-label") Название фильтра
+         input(type="text" placeholder="Однушка на районе" ng-model="editfilter.name")
+
+       div
+         filter-rentorbuy
+         filter-type
+         filter-cost
+         filter-time
+         filter-metro
+         filter-household

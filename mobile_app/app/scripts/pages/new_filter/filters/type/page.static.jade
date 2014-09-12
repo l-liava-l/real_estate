@@ -1,0 +1,25 @@
+ion-view(title="Тип помещения")
+    ion-content
+        div(class="list")
+            div(class="item item-divider")  Тип помещения
+
+            ion-radio( ng-repeat="(section, detail) in list track by $index",
+                       ng-value="section" ng-model="type.section"
+                       ng-click="changeType(section)")  {{ section }}
+
+
+            div(ng-show="type.section" class="item item-divider")  Дополнительные параметры
+
+
+            ion-checkbox( ng-repeat="(key, model) in list['Дом/Коттедж'] track by $index"
+                          ng-show="type.section === 'Дом/Коттедж'"  ng-change="changeDetailType(key)"
+                          ng-model="type.detail[key]" ng-checked="type.detail[key]") {{ key }}
+
+            ion-checkbox( ng-repeat="(key, model) in list['Квартира'] track by $index"
+                          ng-show="type.section === 'Квартира'"  ng-change="changeDetailType(key)"
+                          ng-model="type.detail[key]" ng-checked="type.detail[key]") {{ key }}
+
+            ion-checkbox( ng-repeat="(key, model) in list['Нежилое помещение'] track by $index"
+                          ng-show="type.section === 'Нежилое помещение'"  ng-change="changeDetailType(key)"
+                          ng-model="type.detail[key]" ng-checked="type.detail[key]")  {{ key }}
+

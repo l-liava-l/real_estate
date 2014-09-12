@@ -1,0 +1,7 @@
+
+a(class="item item-icon-left" ui-sref="main.add_filter_type" ng-controller="AreaFilterCtrl")
+    i( class="icon ion-log-in")
+    span( ng-show="!type.section") Выберите тип помещения
+    span( ng-if="type.section") {{ type.section }}
+    span( class="appartament-types" ng-if="type.detail") {{type.DetailPerv.join(',')}}
+    span( ng-show="type.section", class="item-note") Тип помещения

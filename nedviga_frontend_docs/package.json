@@ -1,0 +1,23 @@
+{
+  "author": "Hellpain",
+  "name": "nedviga_frontend_docs",
+  "description": "Package description",
+  "version": "0.0.1",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "javascript-brunch": "1.7.1",
+    "coffee-script-brunch": "1.8.0",
+    "css-brunch": "1.7.0"
+  },
+  "devDependencies": {},
+  "main": "index.js",
+  "license": "ISC"
+}

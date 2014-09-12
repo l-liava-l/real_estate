@@ -1,0 +1,10 @@
+div(ng-controller="HouseholdCtrl")
+
+    li(class="item item-toggle" ng-repeat="item in list() track by $index" ng-show="item.access()")
+        label
+            label(class="col")
+                i(class="{{item.icon}}") {{item.text}}
+            label(style="float: left" class="toggle toggle-positive")
+                input(type="checkbox"  ng-model="item.checked" ng-change="check(item, $index)")
+                div(class="track")
+                    div(class="handle")
